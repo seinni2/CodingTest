@@ -1,9 +1,14 @@
 def solution(sides):
     sum = 0
-    sides.sort()
+    max_num = 0
     
-    if sides[2] < sides[0] + sides[1]:
-        return 1
+    for i in range(len(sides)):
+        if max_num < sides[i]:
+           max_num = sides[i]
+        sum += sides[i]
+    
+            
+    if max_num < sum-max_num:
+        return 1 
     return 2
-
    
